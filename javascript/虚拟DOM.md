@@ -91,7 +91,7 @@ https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
 
 通过同层的树节点进行比较，而非对树进行逐层搜索遍历的方式，两棵树深度比较复杂度很高，将树的比较转为同层比较
 
-![](D:\personal\javascript\虚拟DOM图片\0.jpg)
+<img src="虚拟DOM图片/0.jpg" style="zoom:50%;" />
 
 同层级只做三件事：增删改。
 
@@ -237,7 +237,7 @@ function patchVnode(oldVnode, vnode, insertedVnodeQueue,ownerArray, index, remov
 
 在新老两组VNode节点的头尾两侧添加游标，**在遍历过程中这几个游标都会向中间靠拢**。当 **oldStartIdx > oldEndIdx**或者**newStartIdx > newEndIdx**时结束循环。
 
-<img src="D:\personal\javascript\虚拟DOM图片\1.png" alt="1" style="zoom:40%;" />
+<img src="虚拟DOM图片\1.png" alt="1" style="zoom:40%;" />
 
 遍历规则： 
 
@@ -245,31 +245,31 @@ oldStartVnode、oldEndVnode与newStartVnode、newEndVnode两两**交叉比较**�
 
  当 oldStartVnode和newStartVnode 或者 oldEndVnode和newEndVnode是相同节点，直接patch两者。
 
-<img src="D:\personal\javascript\虚拟DOM图片\2.png" alt="2" style="zoom: 40%;" />
+<img src="虚拟DOM图片\2.png" alt="2" style="zoom: 40%;" />
 
 如果oldStartVnode与newEndVnode相同，patch两者并移动oldStartVnode到oldEndVnode的后面
 
-<img src="D:\personal\javascript\虚拟DOM图片\3.png" alt="3" style="zoom: 40%;" />
+<img src="虚拟DOM图片\3.png" alt="3" style="zoom: 40%;" />
 
 如果oldEndVnode与newStartVnode相同，patch两者并移动oldEndVnode到oldStartVnode前面
 
-<img src="D:\personal\javascript\虚拟DOM图片\4.png" alt="4" style="zoom:40%;" />
+<img src="虚拟DOM图片\4.png" alt="4" style="zoom:40%;" />
 
 如果以上情况均不符合，则在old VNode中找与newStartVnode相同点，若存在则patch两者并将 elmToMove移动到oldStartVnode前面。
 
-<img src="D:\personal\javascript\虚拟DOM图片\5.png" alt="5" style="zoom:40%;" />
+<img src="虚拟DOM图片\5.png" alt="5" style="zoom:40%;" />
 
 若在old VNode中找不到一致节点，则创建一个新的节点放oldStartVnode前面
 
-<img src="D:\personal\javascript\虚拟DOM图片\6.png" alt="6" style="zoom:40%;" />
+<img src="虚拟DOM图片\6.png" alt="6" style="zoom:40%;" />
 
 循环结束，还需要处理剩下的节点：当**oldStartIdx > oldEndIdx**，这时old VNode已经遍历完，new VNode还没有，剩下的VNode都是新增节点，批量创建并插入到oldEndIdx后面。
 
-<img src="D:\personal\javascript\虚拟DOM图片\7.png" alt="7" style="zoom:40%;" />
+<img src="虚拟DOM图片\7.png" alt="7" style="zoom:40%;" />
 
 当**newStartIdx > newEndIdx**时，说明new VNode已经遍历完，old VNode还有剩余，把剩余节点删除 即可。
 
-<img src="D:\personal\javascript\虚拟DOM图片\8.png" alt="8" style="zoom:40%;" />
+<img src="虚拟DOM图片\8.png" alt="8" style="zoom:40%;" />
 
 ```js
 //patch.js 404

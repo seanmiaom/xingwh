@@ -66,11 +66,11 @@
 
 ### 结构
 
-<img src="D:\personal\Csharp\images\01-外观模式关系图.png" style="zoom:50%;" />
+<img src="images/01-外观模式关系图.png" style="zoom:50%;" />
 
 然而对于外观模式而言，是没有一个一般化的类图描述，下面演示一个外观模式的示意性对象图来加深大家对外观模式的理解
 
-<img src="D:\personal\Csharp\images\01-外观模式示意图.png" style="zoom:50%;" />
+<img src="images/01-外观模式示意图.png" style="zoom:50%;" />
 
 在上面的对象图中有两个角色：
 
@@ -117,7 +117,7 @@
 
 ### 类图
 
-<img src="D:\personal\Csharp\images\02-模板模式类图.png" style="zoom:50%;" />
+<img src="images\02-模板模式类图.png" style="zoom:50%;" />
 
 模板方法模式中涉及了两个角色：
 
@@ -224,7 +224,7 @@
 
 -
 
-<img src="D:\personal\Csharp\images\03-观察者结构图_2.png" style="zoom:50%;" />
+<img src="images/03-观察者结构图_2.png" style="zoom:50%;" />
 
 从上图可以发现，这样的实现就是观察者模式的实现。这样，在任何时候，只要调用了订阅号类的Update方法，它就会通知所有的观察者对象，同时，可以看到，观察者模式，取消了直接依赖，变为间接依赖，这样大大提供了系统的可维护性和可扩展性。这里并不是直接给出观察者模式的实现，而是通过一步步重构的方式来引出观察者模式的实现。
 
@@ -266,15 +266,15 @@
 
 中介者模式设计两个具体对象，一个是用户类，另一个是中介者类，根据针对接口编程原则，则需要把这两类角色进行抽象，所以中介者模式中就有了4类角色，它们分别是：抽象中介者角色，具体中介者角色、抽象同事类和具体同事类。中介者类是起到协调各个对象的作用，则抽象中介者角色中则需要保存各个对象的引用。
 
-<img src="D:\personal\Csharp\images\04-终结者结构_1.png" style="zoom:40%;" />
+<img src="images/04-终结者结构_1.png" style="zoom:40%;" />
 
 在现实生活中，中介者的存在是不可缺少的，如果没有了中介者，我们就不能与远方的朋友进行交流了。而在软件设计领域，为什么要使用中介者模式呢？如果不使用中介者模式的话，各个同事对象将会相互进行引用，如果每个对象都与多个对象进行交互时，将会形成如下图所示的网状结构。
 
-<img src="D:\personal\Csharp\images\04-终结者结构_2.png" style="zoom:50%;" />
+<img src="images/04-终结者结构_2.png" style="zoom:50%;" />
 
 从上图可以发现，如果不使用中介者模式的话，每个对象之间过度耦合，这样的既不利于类的复用也不利于扩展。如果引入了中介者模式，那么对象之间的关系将变成星型结构，采用中介者模式之后会形成如下图所示的结构
 
-<img src="D:\personal\Csharp\images\04-中介者结构.png" style="zoom:50%;" />
+<img src="images/04-中介者结构.png" style="zoom:50%;" />
 
 ### 实现
 
@@ -476,7 +476,7 @@ namespace MediatorPattern
 
 既然状态者模式是对已有对象的状态进行抽象，则自然就有抽象状态者类和具体状态者类，而原来已有对象需要保存抽象状态者类的引用，通过调用抽象状态者的行为来改变已有对象的行为。
 
-<img src="D:\personal\Csharp\images\05-状态这结构.png" style="zoom:50%;" />
+<img src="images/05-状态这结构.png" style="zoom:50%;" />
 
 从上图可知，状态者模式涉及以下三个角色：
 
@@ -705,7 +705,7 @@ namespace StatePatternSample
 
 上面代码的运行结果如下图所示
 
-<img src="D:\personal\Csharp\images\05-运行结果.png" style="zoom:50%;" />
+<img src="images/05-运行结果.png" style="zoom:50%;" />
 
 ### 应用观察者模式和状态者模式完善中介者模式方案
 
